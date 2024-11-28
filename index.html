@@ -12,34 +12,47 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fffb00;
+            background-color: #fffbe0;
+            color: #333;
         }
         header {
-            background-color: #ffee00;
-            color: rgb(0, 0, 0);
-            padding: 10px 20px;
+            background-color: #000;
+            color: #ffd700;
+            padding: 20px;
             text-align: center;
+            
+        }
+        header img {
+            width: 100px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #69693d;
-            padding: 10px;
+            background-color: #ffd700;
+            padding: 10px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
         nav a {
-            color: rgb(177, 185, 62);
+            color: #000;
             text-decoration: none;
             margin: 0 15px;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
-            background-color: #003d80;
+            background-color: #000;
+            color: #ffd700;
         }
         section {
-            padding: 20px;
+            padding: 40px 20px;
         }
-        .container {
+         .container {
             max-width: 1200px;
             margin: auto;
             background: white;
@@ -64,7 +77,7 @@
         }
         .cta-box a {
             color: rgb(251, 255, 0);
-            text-decoration: 30px;
+            text-decoration: none;
             padding: 15px 30px;
             background-color: #000000;
             border-radius: 5px;
@@ -85,54 +98,113 @@
         .btn:hover {
             background-color: #000000;
         }
+
+        .shop {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .shop-item {
+            background: #fff;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .shop-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .shop-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .shop-item h3 {
+            color: #000;
+            margin: 15px 0 10px 0;
+        }
+        .shop-item p {
+            color: #555;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #ffd700;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background-color: #ffd700;
+            color: #000;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Sanchaiplastic Mankong</h1>
-        <p>Your Trusted Partner in Plastic Manufacturing</p>
+        <img src="https://assets.onecompiler.app/42z9vgcq4/42zfw6hj7/S__11436044.jpg" alt="Sanchaiplastic Logo">
+        <h1>ยินดีต้อนรับเข้าสู่บริษัทสรรชัยพลาสติกมั่นคงจำกัด</h1>
+        <p>บริษัทที่เชื่อถือได้ในการผลิตแคปซีลหุ้มขวด</p>
     </header>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-        
+        <a href="#home">หน้าหลัก</a>
+        <a href="#services">บริการของเรา</a>
+        <a href="#about">เกี่ยวกับบริษัท</a>
+        <a href="#contact">ติดต่อ</a>
+        <a href="#shop">ร้านค้า</a>
     </nav>
     <section id="home" class="container">
-        <h2>Home</h2>
-        <p>Sanchaiplastic Mankong specializes in high-quality plastic manufacturing. We are committed to providing innovative solutions that meet the needs of industries worldwide.</p>
+        <h2>หน้าหลัก</h2>
+        <p>เป็นบริษัทที่เชื่อถือได้มีหน้าโรงงานพร้อมที่ดูเเลคุณลูกค้าจนจบงานเเละเปิดมามากกว่า 10 ปี ราคาถูกคุณภาพดีไม่มีโก่งราคาคุณภาพล้นเหลือ</p>
     </section>
     <section id="services" class="container">
-        <h2>Our Services</h2>
+        <h2>บริการของเรา</h2>
         <ul>
-            <li>Custom Plastic Product Design</li>
-            <li>Injection Molding</li>
-            <li>Recycling and Sustainability Solutions</li>
-            <li>Quality Assurance and Testing</li>
+            <li>ออกเเบบตามที่คุณต้องการ</li>
+            <li>ปรึกษาเกี่ยวกับสินค้าของเราได้</li>
+            <li>ใส่ใจในการบริการ</li>
+            <li>เน้นคุณภาพที่ดีส่งออกไปถูกใจลูกค้า</li>
         </ul>
     </section>
     <section id="about" class="container">
-        <h2>About Us</h2>
-        <p>With over 20 years of experience, Sanchaiplastic Mankong is a leader in the plastic manufacturing industry. We pride ourselves on innovation, reliability, and eco-friendly practices.</p>
+        <h2>เกี่ยวกับบริษัท</h2>
+        <p>บริษัทนี้เป็นบริษัทที่ทำเกี่ยวกับแคปซีลหุ้มขวดน้ำ และทำการออกแบบตามความต้องการของลูกค้า พร้อมให้คำปรึกษา!</p>
+    </section>
+    <section id="shop" class="container">
+        <h2>เลือกซื้อแคปซีลหุ้มขวดได้ที่นี่</h2>
+        <div class="shop">
+            <div class="shop-item">
+                <img src="product1.jpg" alt="Product 1">
+                <h3>แคปซีล รุ่น 1</h3>
+                <p>ราคา: 200 บาท</p>
+                <a href="#" class="btn">ซื้อเลย</a>
+            </div>
+            <div class="shop-item">
+                <img src="product2.jpg" alt="Product 2">
+                <h3>แคปซีล รุ่น 2</h3>
+                <p>ราคา: 300 บาท</p>
+                <a href="#" class="btn">ซื้อเลย</a>
+            </div>
+            <div class="shop-item">
+                <img src="product3.jpg" alt="Product 3">
+                <h3>แคปซีล รุ่น 3</h3>
+                <p>ราคา: 400 บาท</p>
+                <a href="#" class="btn">ซื้อเลย</a>
+            </div>
+        </div>
     </section>
     <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <p>Plastic grade Premium</p>
-        <ul>
-            <li>Email: contact@sanchaiplastic.com</li>
-            <li>Phone: +66 89-968-6309</li>
-            <li>Address: 123 Mankong Street, Bangkok, Thailand</li>
-        </ul>
+        <h2>ติดต่อเรา</h2>
+        <p>Email: contact@sanchaiplastic.com</p>
+        <p>Phone: 089-968-6309</p>
+        <p>Address: 117 Khlong Khoen, Mueang Samut Songkhram District, Samut Songkhram 75000</p>
     </section>
-
-    <div class="cta-box">
-        <p>Ready to become a member of Sanchai Plastic Mankong!</p>
-        <a href="register.html" class="btn">Register Now</a>
-    </div>
-
-   
-
     <footer>
         <p>&copy; 2024 Sanchaiplastic Mankong. All rights reserved.</p>
     </footer>
