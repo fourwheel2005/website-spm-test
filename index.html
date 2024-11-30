@@ -20,7 +20,6 @@
             color: #ffd700;
             padding: 20px;
             text-align: center;
-            
         }
         header img {
             width: 100px;
@@ -52,7 +51,7 @@
         section {
             padding: 40px 20px;
         }
-         .container {
+        .container {
             max-width: 1200px;
             margin: auto;
             background: white;
@@ -67,39 +66,7 @@
             padding: 10px 20px;
             margin-top: 20px;
         }
-        .cta-box {
-            background-color: #aaa449;
-            color: rgb(0, 0, 0);
-            padding: 40px;
-            text-align: center;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        .cta-box a {
-            color: rgb(251, 255, 0);
-            text-decoration: none;
-            padding: 15px 30px;
-            background-color: #000000;
-            border-radius: 5px;
-            font-size: 20px;
-        }
-        .cta-box a:hover {
-            background-color: #899747;
-        }
-        .btn {
-            padding: 10px 20px;
-            background-color: #928c3b;
-            color: rgb(251, 255, 0);
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        .btn:hover {
-            background-color: #000000;
-        }
-
-        .shop {
+         .shop {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
@@ -130,6 +97,29 @@
         }
         .shop-item p {
             color: #555;
+        }
+
+        .review-section {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .review-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .star-rating {
+            display: flex;
+            gap: 10px;
+        }
+        .star {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .star.checked {
+            color: #ffd700;
         }
         .btn {
             padding: 10px 20px;
@@ -199,6 +189,29 @@
             </div>
         </div>
     </section>
+
+    <!-- Review Section -->
+    <section id="reviews" class="container review-section">
+        <h2>รีวิวสินค้า</h2>
+        <div id="review-list">
+            <!-- Reviews will be displayed here -->
+        </div>
+
+        <h3>เพิ่มรีวิวของคุณ</h3>
+        <form id="review-form" class="review-form">
+            <input type="text" id="reviewer-name" placeholder="ชื่อของคุณ" required>
+            <div class="star-rating" id="star-rating">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <textarea id="review-text" rows="4" placeholder="เขียนรีวิวของคุณที่นี่..." required></textarea>
+            <button type="submit" class="btn">ส่งรีวิว</button>
+        </form>
+    </section>
+
     <section id="contact" class="container">
         <h2>ติดต่อเรา</h2>
         <p>Email: contact@sanchaiplastic.com</p>
@@ -208,5 +221,48 @@
     <footer>
         <p>&copy; 2024 Sanchaiplastic Mankong. All rights reserved.</p>
     </footer>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        const reviewForm = document.getElementById('review-form');
+        const reviewerName = document.getElementById('reviewer-name');
+        const reviewText = document.getElementById('review-text');
+        const reviewList = document.getElementById('review-list');
+        let selectedRating = 0;
+
+        // Handle star click to set rating
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.getAttribute('data-value'));
+                updateStarRating();
+            });
+        });
+
+        // Update the star rating display
+        function updateStarRating() {
+            stars.forEach(star => {
+                if (parseInt(star.getAttribute('data-value')) <= selectedRating) {
+                    star.classList.add('checked');
+                } else {
+                    star.classList.remove('checked');
+                }
+            });
+        }
+
+        // Handle review submission
+        reviewForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (selectedRating && reviewText.value.trim() && reviewerName.value.trim()) {
+                const reviewDiv = document.createElement('div');
+                reviewDiv.classList.add('review');
+                reviewDiv.innerHTML = `<p><strong>${reviewerName.value}</strong> ให้คะแนน: ${selectedRating} ดาว</p><p>${reviewText.value}</p>`;
+                reviewList.appendChild(reviewDiv);
+                reviewText.value = '';
+                reviewerName.value = '';
+                selectedRating = 0;
+                updateStarRating();
+            }
+        });
+    </script>
 </body>
 </html>
